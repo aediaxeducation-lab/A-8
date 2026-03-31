@@ -1,0 +1,43 @@
+{
+  "id": "1774958955877",
+  "title": "What is Quiz",
+  "description": "The most Power  full",
+  "type": "mcq",
+  "duration": 10,
+  "totalMarks": 2,
+  "passingMarks": 1,
+  "instructions": "what is ",
+  "questions": [
+    {
+      "text": "the question ",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctOption": 0,
+      "marks": 1,
+      "type": "mcq",
+      "id": 1774958906953,
+      "createdAt": "2026-03-31T12:08:26.953Z"
+    },
+    {
+      "text": "By By C",
+      "options": [
+        "C",
+        "Node",
+        "C++",
+        "react"
+      ],
+      "correctOption": 0,
+      "marks": 1,
+      "type": "mcq",
+      "id": 1774958953977,
+      "createdAt": "2026-03-31T12:09:13.977Z"
+    }
+  ],
+  "createdAt": "2026-03-31T12:09:15.877Z",
+  "updatedAt": "2026-03-31T12:09:15.877Z",
+  "version": "1.0"
+}
