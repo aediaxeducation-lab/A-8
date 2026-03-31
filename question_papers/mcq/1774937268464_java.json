@@ -1,0 +1,29 @@
+{
+  "id": "1774937268464",
+  "title": "Java",
+  "description": "java course",
+  "type": "mcq",
+  "duration": 60,
+  "totalMarks": 1,
+  "passingMarks": 1,
+  "instructions": "ok",
+  "questions": [
+    {
+      "text": "java question",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctOption": 0,
+      "marks": 1,
+      "type": "mcq",
+      "id": 1774937157353,
+      "createdAt": "2026-03-31T06:05:57.353Z"
+    }
+  ],
+  "createdAt": "2026-03-31T06:07:48.464Z",
+  "updatedAt": "2026-03-31T06:07:48.464Z",
+  "version": "1.0"
+}
