@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Book By AediaX Education | AediaX Books</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+    
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1e1e1e;
+            background: #ffffff;
+        }
+        
+        .book-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        
+        /* Book Header */
+        .book-header {
+            background: #ffffff;
+            border-bottom: 2px solid #3b82f6;
+            padding: 48px;
+        }
+        
+        .book-header-content {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .book-cover {
+            flex: 0 0 280px;
+        }
+        
+        .book-cover img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .book-info {
+            flex: 1;
+        }
+        
+        .book-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #3b82f6;
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .book-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .book-description {
+            color: #4a5568;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .book-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4a5568;
+            font-size: 0.875rem;
+        }
+        
+        .meta-item .material-icons {
+            color: #3b82f6;
+            font-size: 18px;
+        }
+        
+        /* Main Content */
+        .book-main {
+            padding: 48px;
+        }
+        
+        /* Chapters Section */
+        .chapters-section {
+            margin-bottom: 48px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e1e1e;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #3b82f6;
+        }
+        
+        .chapters-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .chapter-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .chapter-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            cursor: pointer;
+            background: #ffffff;
+            transition: background 0.2s;
+        }
+        
+        .chapter-header:hover {
+            background: #f1f5f9;
+        }
+        
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: #1e1e1e;
+        }
+        
+        .chapter-number {
+            background: #3b82f6;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .chapter-title-text {
+            font-size: 1rem;
+        }
+        
+        .chapter-toggle {
+            color: #3b82f6;
+        }
+        
+        .chapter-content {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: #f8fafc;
+        }
+        
+        .chapter-content.open {
+            max-height: 5000px;
+            padding: 20px 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .chapter-description {
+            color: #4a5568;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        
+        .course-content-container {
+            background: white;
+            border-radius: 8px;
+            overflow: auto;
+            max-height: 80vh;
+        }
+        
+        .course-loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6b7280;
+        }
+        
+        .course-error {
+            text-align: center;
+            padding: 60px 20px;
+            color: #ef4444;
+            background: #fef2f2;
+            border-radius: 8px;
+        }
+        
+        .course-error .material-icons {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .retry-button {
+            margin-top: 16px;
+            padding: 8px 20px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        
+        .retry-button:hover {
+            background: #2563eb;
+        }
+        
+        /* Book Details Section */
+        .book-details {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 48px;
+        }
+        
+        .details-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .detail-icon {
+            color: #3b82f6;
+        }
+        
+        .detail-label {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-top: 4px;
+        }
+     
+        
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #e5e7eb;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .book-header {
+                padding: 24px;
+            }
+            
+            .book-header-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+            
+            .book-cover {
+                flex: 0 0 auto;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+            
+            .book-title {
+                font-size: 1.75rem;
+            }
+            
+            .book-main {
+                padding: 24px;
+            }
+            
+            .chapter-header {
+                padding: 16px 20px;
+            }
+            
+            .chapter-title-text {
+                font-size: 0.875rem;
+            }
+            
+            .details-grid {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .book-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.25rem;
+            }
+            
+            .chapter-number {
+                width: 28px;
+                height: 28px;
+                font-size: 0.75rem;
+            }
+        }
+             /* Course Container */
+        .course-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+            background: #ffffff;
+        }
+        
+        /* Hero Section */
+        .course-hero {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 48px 40px;
+        }
+        
+        .course-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .course-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            color: #3b82f6;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .course-badge .material-icons {
+            font-size: 16px;
+        }
+        
+        .course-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .course-description {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.5;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+        
+        .course-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #475569;
+            font-size: 0.85rem;
+        }
+        
+        .stat-item .material-icons {
+            font-size: 18px;
+            color: #64748b;
+        }
+        
+        /* Main Content Layout */
+        .course-main {
+            display: flex;
+            gap: 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #ffffff;
+        }
+        
+        /* Sidebar - Table of Contents */
+        .course-sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+        }
+        
+        .toc-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .toc-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .toc-title .material-icons {
+            font-size: 18px;
+            color: #3b82f6;
+        }
+        
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc-item {
+            margin-bottom: 8px;
+        }
+        
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        
+        .toc-link:hover {
+            background: #f1f5f9;
+            text-decoration: underline;
+        }
+        
+        .toc-link .material-icons {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        /* Content Area */
+        .course-content-area {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        /* Content Styling */
+        .course-content {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: #1e293b;
+        }
+        
+        .course-content h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .course-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 28px 0 16px 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #0f172a;
+        }
+        
+        .course-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: #1e293b;
+        }
+        
+        .course-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+            color: #1e293b;
+        }
+        
+        .course-content p {
+            margin-bottom: 20px;
+        }
+        
+        .course-content a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .course-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .course-content ul, .course-content ol {
+            margin: 16px 0 20px 32px;
+        }
+        
+        .course-content li {
+            margin-bottom: 6px;
+        }
+        
+        /* Image and Media */
+        .course-content img,
+        .course-content video,
+        .course-content audio {
+            max-width: 100%;
+            height: auto;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+        
+        .course-content video {
+            width: 100%;
+            background: #f1f5f9;
+        }
+        
+        .course-content audio {
+            width: 100%;
+        }
+        
+        .figure-container {
+            margin: 24px 0;
+            text-align: center;
+        }
+        
+        .figure-caption {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 8px;
+        }
+        
+        /* Quiz Paper Styles */
+        .question-paper {
+            margin: 48px 0;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .paper-header {
+            background: #f8fafc;
+            padding: 24px 28px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .paper-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #0f172a;
+        }
+        
+        .paper-description {
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        
+        .paper-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        
+        .paper-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #475569;
+            font-size: 0.8rem;
+        }
+        
+        .paper-meta-item .material-icons {
+            font-size: 16px;
+            color: #64748b;
+        }
+        
+        .paper-instructions {
+            background: #fefce8;
+            padding: 16px 24px;
+            margin: 0;
+            border-left: 3px solid #eab308;
+            font-size: 0.9rem;
+        }
+        
+        .paper-instructions-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #854d0e;
+        }
+        
+        .paper-questions {
+            padding: 20px 28px;
+        }
+        
+        .question-item {
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .question-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .question-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .question-number {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 2px 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .question-marks {
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+        
+        .question-type {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #64748b;
+            font-size: 0.75rem;
+        }
+        
+        .question-text {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            color: #0f172a;
+        }
+        
+        .mcq-options {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0 0;
+        }
+        
+        .mcq-option {
+            margin-bottom: 8px;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #ffffff;
+            transition: all 0.2s;
+        }
+        
+        .mcq-option.correct {
+            background: #f0fdf4;
+            border-color: #86efac;
+            border-left: 3px solid #22c55e;
+        }
+        
+        .option-letter {
+            font-weight: 600;
+            display: inline;
+            margin-right: 8px;
+            color: #3b82f6;
+        }
+        
+        .option-text {
+            display: inline;
+        }
+        
+        .correct-indicator {
+            display: inline-block;
+            margin-left: 12px;
+            color: #22c55e;
+            font-size: 0.75rem;
+        }
+        
+        /* Quiz Mode Styles */
+        .quiz-mode-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 28px;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quiz-mode-btn:hover {
+            background: #2563eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-mode-btn.secondary {
+            background: #f1f5f9;
+            color: #3b82f6;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .quiz-mode-btn.secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .quiz-container {
+            background: #ffffff;
+            padding: 24px;
+            margin: 0 28px 28px 28px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+        
+        .quiz-question {
+            margin-bottom: 28px;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        
+        .quiz-question.selected {
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            margin: 8px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quiz-option:hover {
+            background: #f8fafc;
+        }
+        
+        .quiz-option.selected {
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+        }
+        
+        .quiz-option.correct-answer {
+            background: #f0fdf4;
+            border-color: #86efac;
+        }
+        
+        .quiz-option.wrong-answer {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+        
+        .quiz-feedback {
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .quiz-feedback.correct {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+        
+        .quiz-feedback.wrong {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+        
+        .quiz-results {
+            text-align: center;
+            padding: 24px;
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        
+        .quiz-score {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+        
+        .quiz-percentage {
+            font-size: 1rem;
+            color: #64748b;
+        }
+        
+        /* Code Block Styling */
+        .code-block {
+            margin: 24px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f1f5f9;
+            padding: 8px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .code-language {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #475569;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        
+        .code-copy {
+            background: transparent;
+            border: none;
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        
+        .code-copy:hover {
+            background: #e2e8f0;
+        }
+        
+        pre {
+            margin: 0;
+            padding: 16px;
+            overflow-x: auto;
+            background: #1e293b;
+        }
+        
+        code {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        :not(pre) > code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #dc2626;
+            font-size: 0.85rem;
+        }
+        
+        /* Blockquote */
+        .course-content blockquote {
+            margin: 20px 0;
+            padding: 12px 20px;
+            background: #f8fafc;
+            border-left: 3px solid #3b82f6;
+            color: #475569;
+            border-radius: 8px;
+        }
+        
+        /* Tables */
+        .course-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.85rem;
+        }
+        
+        .course-content th,
+        .course-content td {
+            border: 1px solid #e2e8f0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        
+        .course-content th {
+            background: #f8fafc;
+            font-weight: 600;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .course-main {
+                flex-direction: column;
+                padding: 24px;
+                gap: 32px;
+            }
+            
+            .course-sidebar {
+                width: 100%;
+                position: static;
+            }
+            
+            .course-title {
+                font-size: 2rem;
+            }
+            
+            .course-hero {
+                padding: 32px 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .course-title {
+                font-size: 1.6rem;
+            }
+            
+            .course-description {
+                font-size: 0.9rem;
+            }
+            
+            .course-stats {
+                gap: 16px;
+            }
+            
+            .course-content h1 { font-size: 1.4rem; }
+            .course-content h2 { font-size: 1.2rem; }
+            .course-content h3 { font-size: 1.1rem; }
+            
+            .paper-header {
+                padding: 16px 20px;
+            }
+            
+            .paper-title {
+                font-size: 1.2rem;
+            }
+            
+            .paper-questions {
+                padding: 16px 20px;
+            }
+            
+            .quiz-mode-btn {
+                margin: 16px 20px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .course-sidebar,
+            .course-badge {
+                display: none;
+            }
+            
+            .course-main {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-wrapper">
+        <!-- Book Header -->
+        <div class="book-header">
+            <div class="book-header-content">
+                <div class="book-cover">
+                    <img src="https://raw.githubusercontent.com/aediaxeducation-lab/A-6/main/book-covers/1775698241326_java-book-by-aediax-education.webp?t=1775698241326" alt="Java Book By AediaX Education">
+                </div>
+                <div class="book-info">
+                    <div class="book-badge">
+                        <span class="material-icons">menu_book</span>
+                        <span>BOOK</span>
+                    </div>
+                    <h1 class="book-title">Java Book By AediaX Education</h1>
+                    <p class="book-description">Explore Java full course on AediaX</p>
+                    <div class="book-meta">
+                        <div class="meta-item">
+                            <span class="material-icons">person</span>
+                            <span>Author: Amresh Bhuyan</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="material-icons">calendar_today</span>
+                            <span>Published: 4/9/2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="material-icons">language</span>
+                            <span>English</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="material-icons">auto_awesome</span>
+                            <span>Edition: 1st Edition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="book-main">
+            <!-- Chapters -->
+            <div class="chapters-section">
+                <h2 class="section-title">Chapters</h2>
+                <div class="chapters-list">
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(0)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">1</div>
+                                    <div class="chapter-title-text">Introduction to Java</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-0">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-0">
+                                <div class="chapter-description">A comprehensive introduction to the Java programming language, its features, and its importance in modern software development.</div>
+                                <div id="chapter-content-container-0" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(1)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">2</div>
+                                    <div class="chapter-title-text">Java Syntax</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-1">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-1">
+                                <div class="chapter-description">A detailed guide to understanding the basic syntax and structure of Java programming language.</div>
+                                <div id="chapter-content-container-1" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(2)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">3</div>
+                                    <div class="chapter-title-text">Java GUI</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-2">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-2">
+                                <div class="chapter-description">The Java GUI (Graphical User Interface) refers to the set of libraries and frameworks in the Java programming language used to create window‑based applications. </div>
+                                <div id="chapter-content-container-2" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(3)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">4</div>
+                                    <div class="chapter-title-text">Functions and Methods in Java</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-3">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-3">
+                                <div class="chapter-description"> A complete guide to understanding functions and methods in Java, including syntax, types, and practical usage.</div>
+                                <div id="chapter-content-container-3" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(4)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">5</div>
+                                    <div class="chapter-title-text">Data Structures and Algorithms (DSA) Roadmap in Java</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-4">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-4">
+                                <div class="chapter-description">A complete structured roadmap to master DSA using Java, from basics to advanced concepts.</div>
+                                <div id="chapter-content-container-4" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(5)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">6</div>
+                                    <div class="chapter-title-text">Sorting Algorithms in Java</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-5">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-5">
+                                <div class="chapter-description">A complete guide to sorting algorithms with code examples and visual understanding</div>
+                                <div id="chapter-content-container-5" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(6)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">7</div>
+                                    <div class="chapter-title-text">Java Swing – Complete Overview &amp; Code Example</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-6">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-6">
+                                <div class="chapter-description">Lightweight, platform-independent, GUI (Graphical User Interface) toolkit for Java</div>
+                                <div id="chapter-content-container-6" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="chapter-item">
+                            <div class="chapter-header" onclick="toggleChapter(7)">
+                                <div class="chapter-title">
+                                    <div class="chapter-number">8</div>
+                                    <div class="chapter-title-text">Stack and Queue in Java</div>
+                                </div>
+                                <div class="chapter-toggle">
+                                    <span class="material-icons" id="chapter-icon-7">chevron_right</span>
+                                </div>
+                            </div>
+                            <div class="chapter-content" id="chapter-content-7">
+                                <div class="chapter-description">A detailed guide to understanding Stack and Queue data structures in Java with implementation and examples.</div>
+                                <div id="chapter-content-container-7" class="course-content-container">
+                                    <div class="course-loading">
+                                        <div class="spinner"></div>
+                                        <p style="margin-top: 12px;">Loading course content...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Book Details -->
+            <div class="book-details">
+                <h2 class="section-title">Book Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <span class="material-icons">fingerprint</span>
+                        </div>
+                        <div>
+                            <div class="detail-label">ISBN</div>
+                            <div class="detail-value">7854998757888</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <span class="material-icons">business</span>
+                        </div>
+                        <div>
+                            <div class="detail-label">Publisher ID</div>
+                            <div class="detail-value">AEDI001</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <span class="material-icons">auto_awesome</span>
+                        </div>
+                        <div>
+                            <div class="detail-label">Edition</div>
+                            <div class="detail-value">1st Edition</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <span class="material-icons">language</span>
+                        </div>
+                        <div>
+                            <div class="detail-label">Language</div>
+                            <div class="detail-value">English</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+    
+    <script>
+        // Store chapter data
+        const chaptersData = [{"id":"9iuFzD1KSPkbV0OWtzMA","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-10/main/courses/1775042975175_introduction-to-java.html?t=1775042975175","title":"Introduction to Java","description":"A comprehensive introduction to the Java programming language, its features, and its importance in modern software development."},{"id":"E1i5LOHguIWYl7GUAZNp","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-4/main/courses/1775043100044_java-syntax.html?t=1775043100044","title":"Java Syntax","description":"A detailed guide to understanding the basic syntax and structure of Java programming language."},{"id":"b9LLUq0leogLxB5IG3JJ","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-5/main/courses/1775697635214_java-gui.html?t=1775697722072","title":"Java GUI","description":"The Java GUI (Graphical User Interface) refers to the set of libraries and frameworks in the Java programming language used to create window‑based applications. "},{"id":"acMnsSS5I02oc82lYTn0","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-2/main/courses/1775041786390_functions-and-methods-in-java.html?t=1775041786390","title":"Functions and Methods in Java","description":" A complete guide to understanding functions and methods in Java, including syntax, types, and practical usage."},{"id":"aJsc9jWLB7uDhUEolEOr","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-8/main/courses/1775041586390_data-structures-and-algorithms-dsa-roadmap-in-java.html?t=1775041586390","title":"Data Structures and Algorithms (DSA) Roadmap in Java","description":"A complete structured roadmap to master DSA using Java, from basics to advanced concepts."},{"id":"lPWc8VgEfkfQajlgrzZS","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-10/main/courses/1775041436823_sorting-algorithms-in-java.html?t=1775041436823","title":"Sorting Algorithms in Java","description":"A complete guide to sorting algorithms with code examples and visual understanding"},{"id":"9APnNO0GJ4H8Ih7HZtZE","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-2/main/courses/1775697972557_java-swing-complete-overview-code-example.html?t=1775697972557","title":"Java Swing – Complete Overview & Code Example","description":"Lightweight, platform-independent, GUI (Graphical User Interface) toolkit for Java"},{"id":"uz82evuKXmZZDAlPR3bn","courseUrl":"https://raw.githubusercontent.com/aediaxeducation-lab/A-6/main/courses/1775040911443_stack-and-queue-in-java.html?t=1775040911443","title":"Stack and Queue in Java","description":"A detailed guide to understanding Stack and Queue data structures in Java with implementation and examples."}];
+        
+        // Track loaded chapters
+        const loadedChapters = {};
+        
+        // CORS proxy URL (use a free CORS proxy)
+        const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+        
+        async function loadCourseContent(index) {
+            const container = document.getElementById('chapter-content-container-' + index);
+            const chapter = chaptersData[index];
+            
+            if (!chapter || !chapter.courseUrl) {
+                container.innerHTML = `
+                    <div class="course-error">
+                        <span class="material-icons">error_outline</span>
+                        <p>Course content not available</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            try {
+                container.innerHTML = `
+                    <div class="course-loading">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 12px;">Loading course content...</p>
+                    </div>
+                `;
+                
+                // Try to fetch directly first
+                let response;
+                try {
+                    response = await fetch(chapter.courseUrl);
+                } catch (directError) {
+                    // If direct fetch fails, try with CORS proxy
+                    console.log('Direct fetch failed, trying with proxy...');
+                    response = await fetch(CORS_PROXY + chapter.courseUrl);
+                }
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                let html = await response.text();
+                
+                // Extract the main content from the course HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                // Try to find course content in various possible containers
+                let courseContent = doc.querySelector('.course-content');
+                if (!courseContent) courseContent = doc.querySelector('.course-wrapper');
+                if (!courseContent) courseContent = doc.querySelector('main');
+                if (!courseContent) courseContent = doc.body;
+                
+                // Create a styled container for the course content
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = 'loaded-course-content';
+                contentWrapper.style.cssText = `
+                    font-family: 'Inter', sans-serif;
+                    line-height: 1.6;
+                    color: #1e1e1e;
+                `;
+                
+                // Copy the content
+                if (courseContent && courseContent.innerHTML) {
+                    contentWrapper.innerHTML = courseContent.innerHTML;
+                    
+                    // Fix relative paths to absolute
+                    const baseUrl = chapter.courseUrl.substring(0, chapter.courseUrl.lastIndexOf('/') + 1);
+                    contentWrapper.querySelectorAll('img, a, link, script').forEach(el => {
+                        if (el.src && !el.src.startsWith('http') && !el.src.startsWith('data:')) {
+                            el.src = baseUrl + el.src;
+                        }
+                        if (el.href && !el.href.startsWith('http')) {
+                            el.href = baseUrl + el.href;
+                        }
+                    });
+                    
+                    // Re-run any scripts if needed
+                    contentWrapper.querySelectorAll('script').forEach(oldScript => {
+                        const newScript = document.createElement('script');
+                        if (oldScript.src) {
+                            newScript.src = oldScript.src;
+                        } else {
+                            newScript.textContent = oldScript.textContent;
+                        }
+                        contentWrapper.appendChild(newScript);
+                    });
+                    
+                    container.innerHTML = '';
+                    container.appendChild(contentWrapper);
+                    
+                    // Apply responsive styles to images and videos
+                    const mediaElements = container.querySelectorAll('img, video, audio');
+                    mediaElements.forEach(el => {
+                        el.style.maxWidth = '100%';
+                        el.style.height = 'auto';
+                        if (el.tagName === 'VIDEO') {
+                            el.style.width = '100%';
+                        }
+                    });
+                    
+                    // Highlight code blocks if Prism is available
+                    if (typeof Prism !== 'undefined') {
+                        Prism.highlightAllUnder(container);
+                    }
+                    
+                } else {
+                    throw new Error('Could not extract course content');
+                }
+                
+                loadedChapters[index] = true;
+                
+            } catch (error) {
+                console.error('Error loading course:', error);
+                container.innerHTML = `
+                    <div class="course-error">
+                        <span class="material-icons">error_outline</span>
+                        <p>Failed to load course content</p>
+                        <p style="font-size: 0.875rem; margin-top: 8px;">${error.message}</p>
+                        <button class="retry-button" onclick="loadCourseContent(${index})">
+                            <span class="material-icons" style="font-size: 16px; vertical-align: middle;">refresh</span>
+                            Retry
+                        </button>
+                    </div>
+                `;
+            }
+        }
+        
+        function toggleChapter(index) {
+            const content = document.getElementById('chapter-content-' + index);
+            const icon = document.getElementById('chapter-icon-' + index);
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.textContent = 'chevron_right';
+            } else {
+                content.classList.add('open');
+                icon.textContent = 'expand_more';
+                
+                // Load course content if not already loaded
+                if (!loadedChapters[index]) {
+                    loadCourseContent(index);
+                }
+            }
+        }
+        
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close any open chapters if needed
+            }
+        });
+    </script>
+</body>
+</html>
